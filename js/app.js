@@ -9,6 +9,8 @@ let msg;
 /*------------------------ Cached Element References ------------------------*/
 const resultDisplayEl = document.querySelector('#result-display');
 const thumbsDownEl = document.querySelector('#thumbsDown');
+const instructionsHeader = document.querySelector('#instructions h2');
+const instructionsText = document.querySelector('#instructions p');
 
 /*-------------------------------- Functions --------------------------------*/
 const getPlayerChoice = (event) => {
@@ -75,6 +77,11 @@ function showThumbsDown() {
     thumbsDownEl.classList.remove('show');
   }, 800); // Hide after 0.8s
 }
+
+/* Toggle instructions text visibility on heading click */
+instructionsHeader.addEventListener('click', () => {
+  instructionsText.classList.toggle('hidden');
+});
 
 /*----------------------------- Event Listeners -----------------------------*/
 document.querySelector('#rock').addEventListener('click', play);
